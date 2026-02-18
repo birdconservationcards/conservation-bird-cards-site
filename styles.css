@@ -126,7 +126,10 @@ h2 {
   color: #ffffff; /* explicitly keep white */
 }
 
-
+.btn:focus,
+.btn:active {
+  color: #ffffff;
+}
 .btn.small {
   padding: 8px 12px;
   font-size: 14px;
