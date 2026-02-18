@@ -85,14 +85,19 @@
     </section>
 
     <!-- SIGNUP SECTION (EMBED ONLY) -->
-    <section id="signup" class="card">
-      <div class="mlwrap">
+<section id="signup" class="card">
+  <div class="mlwrap">
+    <div id="mailerlite-embed"></div>
+  </div>
+</section>
 
-        <!-- PASTE YOUR FULL MAILERLITE EMBED CODE HERE -->
-        <!-- Keep it exactly as MailerLite gave you -->
-
-      </div>
-    </section>
+<script>
+  fetch("embed.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("mailerlite-embed").innerHTML = data;
+    });
+</script>
 
     <footer class="footer subtle tiny">
       <p>© 2026 Bird Conservation Cards</p>
