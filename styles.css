@@ -88,9 +88,10 @@ section {
   font-weight: 500;
 }
 
-.nav a:hover {
+.nav a:not(.btn):hover {
   color: var(--accent-dark);
 }
+
 
 /* ===============================
    TYPOGRAPHY
