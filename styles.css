@@ -1,3 +1,7 @@
+/* ===============================
+   DESIGN TOKENS
+================================= */
+
 :root {
   --max: 980px;
 
@@ -6,65 +10,81 @@
 
   --text: #0f172a;
   --muted: #475569;
-  --border: #e5e7eb;
 
+  --border: #e5e7eb;
   --bg: #ffffff;
   --bg-soft: #f8fafc;
+
+  --radius: 12px;
 }
 
-/* Reset */
+/* ===============================
+   BASE
+================================= */
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  line-height: 1.6;
+  font-size: 16.5px;
+  line-height: 1.7;
   color: var(--text);
   background: var(--bg-soft);
   -webkit-font-smoothing: antialiased;
 }
 
-/* Layout */
+/* Make anchor jumps not hide under sticky header */
+section[id] { scroll-margin-top: 92px; }
 
 .wrap {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 24px;
+  padding: 28px 24px;
 }
 
 section {
-  margin-bottom: 48px;
+  margin-bottom: 72px;
 }
 
-/* Header */
+/* ===============================
+   HEADER / NAV
+================================= */
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 24px;
+  gap: 16px;
+
+  padding: 16px 24px;
   border-bottom: 1px solid var(--border);
   background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
 }
 
 .brand {
   font-family: 'Fraunces', serif;
   font-weight: 700;
   font-size: 20px;
+  letter-spacing: -0.01em;
 }
 
 .nav {
   display: flex;
-  gap: 18px;
+  gap: 14px;
+  align-items: center;
 }
 
 .nav a {
-  text-decoration: none;
   color: var(--text);
+  text-decoration: none;
   font-weight: 500;
 }
 
@@ -72,80 +92,129 @@ section {
   color: var(--accent-dark);
 }
 
-/* Typography */
+/* ===============================
+   TYPOGRAPHY
+================================= */
 
 h1, h2, h3 {
   font-family: 'Fraunces', serif;
   letter-spacing: -0.01em;
+  margin: 0 0 12px 0;
 }
 
 h1 {
-  font-size: clamp(34px, 5vw, 48px);
-  line-height: 1.1;
+  font-size: clamp(36px, 5vw, 52px);
+  line-height: 1.08;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 22px;
+  font-weight: 600;
 }
+
+p { margin: 0 0 12px 0; }
 
 .lead {
   font-size: 18px;
-  max-width: 60ch;
+  max-width: 62ch;
   color: var(--muted);
+  margin-bottom: 22px;
 }
 
-/* Hero Accent Line */
+.subtle { color: var(--muted); }
+.tiny { font-size: 12px; }
+
+/* ===============================
+   HERO
+================================= */
+
+.hero {
+  padding: 100px 0 60px;
+}
 
 .hero h1::after {
   content: "";
   display: block;
-  width: 80px;
-  height: 4px;
+  width: 64px;
+  height: 3px;
   background: var(--accent);
   border-radius: 999px;
   margin-top: 16px;
 }
 
-/* Buttons */
+.hero .btn {
+  margin-top: 6px;
+}
+
+.hero .subtle {
+  margin-top: 14px;
+}
+
+/* ===============================
+   BUTTONS
+================================= */
 
 .btn {
   display: inline-block;
   padding: 12px 18px;
-  border-radius: 12px;
+  border-radius: var(--radius);
   border: 1px solid var(--accent);
   background: var(--accent);
   color: #ffffff;
+
   text-decoration: none;
   font-weight: 700;
+
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.btn:hover {
-  background: var(--accent-dark);
-  border-color: var(--accent-dark);
-  color: #ffffff; /* explicitly keep white */
-}
-
+.btn:hover,
 .btn:focus,
 .btn:active {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
   color: #ffffff;
 }
+
 .btn.small {
   padding: 8px 12px;
   font-size: 14px;
+  border-radius: 10px;
 }
 
-/* Cards */
+/* ===============================
+   CARDS
+================================= */
 
 .card {
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius);
   padding: 28px;
-  box-shadow: 0 2px 6px rgba(15,23,42,0.05);
+
+  /* Softer, more “editorial” */
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
 }
 
-/* Grid */
+/* Optional: make the signup card subtly special (very restrained) */
+#signup.card {
+  background: linear-gradient(to bottom, #ffffff, #f9fafb);
+}
+
+/* ===============================
+   LISTS
+================================= */
+
+ul {
+  margin: 12px 0 0 0;
+  padding-left: 18px;
+}
+
+li { margin: 6px 0; }
+
+/* ===============================
+   GRID
+================================= */
 
 .grid.two {
   display: grid;
@@ -154,67 +223,87 @@ h2 {
 }
 
 @media (max-width: 760px) {
-  .grid.two {
-    grid-template-columns: 1fr;
-  }
+  .grid.two { grid-template-columns: 1fr; }
 }
 
-/* Sample Boxes */
+/* ===============================
+   SAMPLES
+================================= */
 
 .samples {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 18px;
+  margin-top: 16px;
 }
 
 @media (max-width: 760px) {
-  .samples {
-    grid-template-columns: 1fr;
-  }
+  .samples { grid-template-columns: 1fr; }
 }
 
 .sampleBox {
   border: 1px dashed var(--border);
-  border-radius: 14px;
-  padding: 40px;
+  border-radius: var(--radius);
+  padding: 38px 20px;
   text-align: center;
   background: var(--bg-soft);
   color: var(--muted);
 }
 
-/* MailerLite override (non-iframe embeds only) */
+/* ===============================
+   FORMS (your own, if used later)
+================================= */
 
-.mlwrap button,
-.mlwrap input[type="submit"] {
-  background: var(--accent) !important;
-  border-color: var(--accent) !important;
-  color: #fff !important;
-  border-radius: 12px !important;
+input, select, textarea {
+  font: inherit;
+  padding: 12px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
+}
+
+/* ===============================
+   MAILERLITE INTEGRATION
+   (targets your specific embed container id)
+================================= */
+
+/* Reduce the “double box” look inside your card */
+#mlb2-37298823.ml-form-embedContainer .ml-form-embedWrapper {
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+/* Force Fraunces for MailerLite headings (replacing Georgia) */
+#mlb2-37298823.ml-form-embedContainer .ml-form-embedContent h4,
+#mlb2-37298823.ml-form-embedContainer .ml-form-successContent h4 {
+  font-family: 'Fraunces', serif !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Make the MailerLite button match your rounding + spacing */
+#mlb2-37298823.ml-form-embedContainer .ml-form-embedSubmit button {
+  border-radius: var(--radius) !important;
+  padding: 12px 16px !important;
+}
+
+/* Optional: align ML button size visually with your buttons */
+#mlb2-37298823.ml-form-embedContainer .ml-form-embedSubmit button.primary {
   font-weight: 700 !important;
 }
 
-.mlwrap button:hover,
-.mlwrap input[type="submit"]:hover {
-  background: var(--accent-dark) !important;
-  border-color: var(--accent-dark) !important;
-}
-
-/* Footer */
+/* ===============================
+   FOOTER
+================================= */
 
 .footer {
-  margin-top: 40px;
+  margin-top: 56px;
+  padding-bottom: 28px;
   text-align: center;
-}
-
-.subtle {
   color: var(--muted);
-}
-
-.tiny {
-  font-size: 12px;
-}
-
-#signup {
-  background: #ffffff;
-  border: 2px solid var(--accent);
 }
