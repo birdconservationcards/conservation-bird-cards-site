@@ -83,36 +83,15 @@
       <h2>Join early access</h2>
       <p class="subtle">Get prototype updates and early ordering info. No spam.</p>
 
-      <!-- Replace FORM_ACTION with your form endpoint (MailerLite, Formspree, or Supabase) -->
-      <form class="form" action="FORM_ACTION" method="POST">
-        <label>
-          Email <span aria-hidden="true">*</span>
-          <input type="email" name="email" required placeholder="you@school.edu.au" />
-        </label>
-
-        <label>
-          Name (optional)
-          <input type="text" name="name" placeholder="Your name" />
-        </label>
-
-        <label class="inline">
-          <input type="checkbox" name="is_teacher" />
-          I’m a teacher
-        </label>
-
-        <label>
-          State/Territory (optional)
-          <select name="state">
-            <option value="">Select…</option>
-            <option>ACT</option><option>NSW</option><option>VIC</option><option>QLD</option>
-            <option>SA</option><option>WA</option><option>TAS</option><option>NT</option>
-            <option>Outside Australia</option>
-          </select>
-        </label>
-
-        <button class="btn" type="submit">Request early access</button>
-        <p class="subtle tiny">Unsubscribe any time.</p>
-      </form>
+    <!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2122350');
+</script>
+<!-- End MailerLite Universal -->
     </section>
 
     <footer class="footer subtle tiny">
