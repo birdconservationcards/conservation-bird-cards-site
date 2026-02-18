@@ -208,3 +208,8 @@ h2 {
 .tiny {
   font-size: 12px;
 }
+
+#signup {
+  background: #ffffff;
+  border: 2px solid var(--accent);
+}
