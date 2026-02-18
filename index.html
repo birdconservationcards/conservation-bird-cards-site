@@ -1,49 +1,123 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Conservation Bird Cards</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px;
-      background-color: #f5f5f5;
-    }
-    h1 {
-      font-size: 2.5rem;
-    }
-    p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 20px auto;
-    }
-    .button {
-      display: inline-block;
-      padding: 12px 24px;
-      margin-top: 20px;
-      background-color: #2e5d3b;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bird Conservation Cards</title>
+  <meta name="description" content="Artist-led, region-specific Australian bird education cards for primary classrooms (Years 3–6). Join early access." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <header class="wrap header">
+    <div class="brand">Bird Conservation Cards</div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#samples">Samples</a>
+      <a class="btn small" href="#signup">Join early access</a>
+    </nav>
+  </header>
 
-<h1>Conservation Bird Cards</h1>
-<p>Region-specific, conservation-informed bird education resources for Australian classrooms.</p>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Australian bird education cards for primary classrooms.</h1>
+      <p class="lead">
+        Artist-led, region-specific resources (Years 3–6) designed for clear teaching use and conservation literacy.
+      </p>
+      <div class="cta">
+        <a class="btn" href="#signup">Join the teacher early access list</a>
+        <p class="subtle">First edition in development: ACT/NSW region focus.</p>
+      </div>
+    </section>
 
-<!-- MailerLite Universal -->
-<script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '2122350');
-</script>
-<!-- End MailerLite Universal -->
+    <section class="grid two">
+      <div class="card">
+        <h2>What’s included</h2>
+        <ul>
+          <li>Region editions featuring Australian species</li>
+          <li>Concise habitat, diet, and conservation status</li>
+          <li>Ethical birding guidance (classroom-appropriate)</li>
+          <li>Print-friendly layouts with readable typography</li>
+          <li>Optional QR links to extra resources (future)</li>
+        </ul>
+      </div>
 
+      <div class="card">
+        <h2>How teachers use it</h2>
+        <ul>
+          <li><strong>Warm-up:</strong> match birds to habitat or diet</li>
+          <li><strong>Group work:</strong> research one species and present</li>
+          <li><strong>Assessment support:</strong> vocabulary, classification, ecosystems</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="samples" class="card">
+      <h2>Sample cards</h2>
+      <p class="subtle">Prototype designs (not final). Designed for clarity at arm’s length.</p>
+      <div class="samples">
+        <div class="sampleBox">Add card mockup image</div>
+        <div class="sampleBox">Add card back example</div>
+        <div class="sampleBox">Add another card mockup</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Ethical transparency</h2>
+      <p>
+        A portion of proceeds will be directed to Australian bird conservation initiatives.
+        Impact reporting will be published annually once sales begin. Details will be finalised before launch.
+      </p>
+    </section>
+
+    <section id="about" class="card">
+      <h2>About</h2>
+      <p>
+        Bird Conservation Cards is an Australia-based project creating visually strong, classroom-usable bird resources
+        that support local biodiversity learning and ethical wildlife engagement. Early prototypes are being refined
+        with teacher feedback before printing.
+      </p>
+    </section>
+
+    <section id="signup" class="card">
+      <h2>Join early access</h2>
+      <p class="subtle">Get prototype updates and early ordering info. No spam.</p>
+
+      <!-- Replace FORM_ACTION with your form endpoint (MailerLite, Formspree, or Supabase) -->
+      <form class="form" action="FORM_ACTION" method="POST">
+        <label>
+          Email <span aria-hidden="true">*</span>
+          <input type="email" name="email" required placeholder="you@school.edu.au" />
+        </label>
+
+        <label>
+          Name (optional)
+          <input type="text" name="name" placeholder="Your name" />
+        </label>
+
+        <label class="inline">
+          <input type="checkbox" name="is_teacher" />
+          I’m a teacher
+        </label>
+
+        <label>
+          State/Territory (optional)
+          <select name="state">
+            <option value="">Select…</option>
+            <option>ACT</option><option>NSW</option><option>VIC</option><option>QLD</option>
+            <option>SA</option><option>WA</option><option>TAS</option><option>NT</option>
+            <option>Outside Australia</option>
+          </select>
+        </label>
+
+        <button class="btn" type="submit">Request early access</button>
+        <p class="subtle tiny">Unsubscribe any time.</p>
+      </form>
+    </section>
+
+    <footer class="footer subtle tiny">
+      <p>Contact: hello@birdconservationcards.com.au (set up once domain is active)</p>
+    </footer>
+  </main>
 </body>
 </html>
