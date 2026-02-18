@@ -270,6 +270,23 @@ textarea:focus {
    FOOTER
 ================================= */
 
+
+/* Override MailerLite button */
+
+.ml-form-embedSubmit button,
+.ml-form-embedSubmit input,
+.ml-form-embedContainer button {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+.ml-form-embedSubmit button:hover,
+.ml-form-embedContainer button:hover {
+  background: var(--accent-dark) !important;
+  border-color: var(--accent-dark) !important;
+}
+
+
 .footer {
   padding: 24px 0 40px;
   color: var(--muted);
